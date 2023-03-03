@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>测试用页</title>
-      <link href="/2022/09/19/hello-world/"/>
-      <url>/2022/09/19/hello-world/</url>
+      <title>小奈博客</title>
+      <link href="/2022/09/19/LinkStack/"/>
+      <url>/2022/09/19/LinkStack/</url>
       
-        <content type="html"><![CDATA[<p><img src="/images/1133988.jpg" alt="原神图"></p><p><img src="/images/1133988.jpg" alt="这是代替图片的文字，随便写"></p>]]></content>
+        <content type="html"><![CDATA[<pre><code>#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;stdbool.h&gt; //栈的链式存储（带头） //此为一个基本的链表结构 typedef struct Node&#123;    int data;    struct Node *next;&#125;Node;//因为有top指针才会算是个栈式结构 typedef struct LinkNode&#123;    //上面其实就是栈的组成部分了，只需要一个top来操作栈，那么top这里就代表了整个栈    //后续调用栈都是调用这里有top的结构体     Node *top;    int count;&#125;LinkNode;//初始化 bool InitStack(LinkNode *s)&#123;    //如果分配的s的地址空间不存在则     if(s==NULL)&#123;        return false;    &#125;        s-&gt;top=NULL;    s-&gt;count=0;     return true;&#125;//加入元素bool Push(LinkNode *s,int x)&#123;    //生成一个链表的节点     Node *p=(Node*)malloc(sizeof(Node));    //新节点存入数据     p-&gt;data =x;    //将新节点的下一个节点指向当前栈顶的节点     p-&gt;next =s-&gt;top;    //将当前栈顶节点调整到新节点位置     s-&gt;top = p;    s-&gt;count++;    return true;&#125; //取出元素bool Pop(LinkNode *s,int *x)&#123;    if(s-&gt;top==NULL&amp;&amp;s-&gt;count==0)&#123;        return false;    &#125;            //创建一个节点指向当前栈顶节点位置     Node *p=s-&gt;top;    //将栈顶元素取出     *x = p-&gt;data;    //将top栈顶指针指向之前那个栈顶节点下一个位置     s-&gt;top = p-&gt;next;    //干掉栈顶元素     free(p);     s-&gt;count--;        return true;&#125;int main()&#123;    LinkNode s;    InitStack(&amp;s);        Push(&amp;s,100);    Push(&amp;s,200);    Push(&amp;s,300);    Push(&amp;s,400);        int c=-1;        Pop(&amp;s,&amp;c);    printf(&quot;取出的数为&quot;);    printf(&quot;%d\n&quot;,c);                return 0;&#125;</code></pre>]]></content>
       
       
       
@@ -17,11 +17,11 @@
     
     
     <entry>
-      <title>小奈博客</title>
-      <link href="/2022/09/19/test/"/>
-      <url>/2022/09/19/test/</url>
+      <title>测试用页</title>
+      <link href="/2022/09/19/hello-world/"/>
+      <url>/2022/09/19/hello-world/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<img src="E:\Blog\blog\source\_posts\images\1303754.jpg" style="zoom: 25%;" /><p>欢迎来到我的个人介绍页面&#96;，这里我会分享我的所得所想，我的作品，我的计划！</p><img src="E:\Blog\blog\source\_posts\images\1133988.jpg" style="zoom:33%;" /><p>那么接下来到下一个页面瞧瞧吧！</p>]]></content>
       
       
       
